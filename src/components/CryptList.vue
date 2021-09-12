@@ -1,13 +1,15 @@
 <template>
-  <div class="card">
-    <div class="card-content">
-      <h1 class="card-title">{{ Value }}</h1>
-      <h1 class="card-title">{{ Description }}</h1>
+  <div class="list">
+    <div class="list-title">
+      <h1>{{ Value }}</h1>
     </div>
-    <div class="card-link">
-      <a @click="$router.push({ name: 'About', params: { Value: Value } })"
-        >About</a
-      >
+    <div class="list-detail">
+      <h1>{{ Description }}</h1>
+    </div>
+    <div class="list-link">
+      <button>
+      <a @click="$router.push({ name: 'About', params: { Value: Value } })">詳細</a>
+      </button>
     </div>
   </div>
 </template>
@@ -19,39 +21,50 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  width: 27%;
-  margin: 30px 0;
+.list {
   background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.card-img {
-  border-radius: 5px 5px 0 0;
-  max-width: 100%;
-  height: auto;
+
+.list-title {
+  width: 20%;
+  font-size: 8px;
+  text-align: left;
+  color: #1B5B63;
+  margin: 5px 20px;
+  text-align: left;
 }
-.card-content {
-  padding: 20px;
+.list-detail{
+  width: 60%;
+  font-size: 8px;
+  margin: 5px 10px;
+  color: #1B5B63;
+  text-align: left;
+
 }
-.card-title {
-  font-size: 20px;
-  margin-bottom: 20px;
+.list-link {
+  width: 20%;
   text-align: center;
-  color: #333;
+  margin:  5px 10px;
 }
-.card-link {
-  text-align: center;
-  border-top: 1px solid #eee;
-  padding: 20px;
-}
-.card-link a {
+ .list-link button{
+   box-shadow:1px 2px rgb(138, 138, 138);
+   border: rgb(224, 224, 224) solid 0.5px ;
+   border-radius: 10px;
+   padding: 5px 10px;
+
+  }
+.list-link a {
   text-decoration: none;
-  color: #0bd;
+  color: #1B5B63;
+  font-weight: bold;
   margin: 0 10px;
   cursor: pointer;
 }
-.card-link a:hover {
-  color: #0090aa;
+.list-link a:hover {
+  color: #003841;
 }
 </style>

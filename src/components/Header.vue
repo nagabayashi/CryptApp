@@ -8,14 +8,15 @@
 
 <style scoped>
 header {
-  height: 70px;
-  line-height: 70px;
-  background: rgba(0, 0, 0, 1);
+  height: 50px;
+  line-height: 50px;
+  background: rgb(255, 255, 255);
 }
 .center {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
+  font-size: 8px;
+  /* font-weight: lighter; */
+  color: #12575F;
+  text-align: left;
+  margin: 0 20px;
 }
 </style>

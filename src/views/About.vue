@@ -16,11 +16,14 @@
       </div>
     </div>
     <div class="coin-detail">
-       <div class="list-title">
+       <div class="coin-name">
         <h4>通貨{{ Value }}</h4>
        </div>
-      <div class="list-detail">
+      <div class="coin-rate">
         <h4>レート{{ Description }}</h4>
+      </div>
+      <div class="coin-time">
+        <h4>更新時間{{ Description }}</h4>
       </div>
     </div>
     <div class="home-link">
@@ -57,7 +60,7 @@ body {
   background: #eee;
 }
 .about {
-  width: 80%;
+  width: 100%;
   flex-wrap: wrap;
   margin: auto;
   color: #1B5B63;
@@ -78,22 +81,55 @@ body {
 .list-namebox{
   display: flex;
   justify-content: space-around;
-  padding: 0 10px;
 }
 .list-name-1{
   width: 30%;
-  text-align: left;
+  text-align: center;
   margin: 0 20px;
 
 }
 .list-name-2{
   width: 35%;
-  text-align: left;
-  margin: 0 10px;
+  text-align: center;
+  margin: 0 20px;
 }
 .list-name-3{
   width: 35%;
+  text-align: center;
+  margin: 0 20px;
 }
+
+.coin-detail{
+  display: flex;
+  justify-content: space-around;
+}
+
+.coin-detail h4{
+  margin: 8px 0;
+  /* font-size: 12px; */
+}
+.coin-name{
+  width: 30%;
+  border: #5ACB94 solid 1px;
+  margin: 0 20px;
+  border-radius: 5px;
+  justify-content: center;
+}
+.coin-rate{
+  width: 35%;
+  border: #5ACB94 solid 1px;
+  margin: 0 20px;
+  border-radius: 5px;
+  justify-content: center;
+}
+.coin-time{
+  width: 35%;
+  border: #5ACB94 solid 1px;
+  margin: 0 20px;
+  border-radius: 5px;
+  justify-content: center;
+}
+
 .home-link{
   margin: 100px;
 }

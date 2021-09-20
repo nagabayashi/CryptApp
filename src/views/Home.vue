@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="coin-list">
-      <CryptList v-for="(data, index) in lists" :key="index" :Value="data.Value" :Description="data.Description" />
+      <CryptList v-for="(data, index) in lists" :key="index" :Symbol="data.Symbol" :Description="data.Description" />
     </div>
   </div>
 </template>
@@ -28,8 +28,52 @@ export default {
     return {
       lists: [
         {
-          Value: "BTC",
+          Symbol: "BTC",
           Description: "ビットコイン（現物取引）",
+        },
+        {
+          Symbol: "ETH",
+          Description: "イーサリアム（現物取引）",
+        },
+        {
+          Symbol: "BCH",
+          Description: "ビットコインキャッシュ（現物取引）",
+        },
+        {
+          Symbol: "LTC",
+          Description: "ライトコイン（現物取引）",
+        },
+        {
+          Symbol: "XRP",
+          Description: "リップル（現物取引）",
+        },
+        {
+          Symbol: "XEM",
+          Description: "ネム（現物取引）",
+        },
+        {
+          Symbol: "XLM",
+          Description: "ステラルーメン（現物取引）",
+        },
+        {
+          Symbol: "BTC_JPY",
+          Description: "ビットコイン/円（レバレッジ取引）",
+        },
+        {
+          Symbol: "ETH_JPY",
+          Description: "イーサリアム/円（レバレッジ取引）",
+        },
+        {
+          Symbol: "BCH_JPY",
+          Description: "ビットコインキャッシュ/円（レバレッジ取引）",
+        },
+        {
+          Symbol: "LTC_JPY",
+          Description: "ライトコイン/円（レバレッジ取引）",
+        },
+        {
+          Symbol: "XRP_JPY",
+          Description: "リップル/円（レバレッジ取引）",
         },
       ]
     };

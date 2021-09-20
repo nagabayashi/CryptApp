@@ -17,13 +17,13 @@
     </div>
     <div class="coin-detail">
        <div class="coin-name">
-        <h4>通貨{{ Value }}</h4>
+        <h4>{{ value }}</h4>
        </div>
       <div class="coin-rate">
-        <h4>レート{{ Description }}</h4>
+        <h4>レート</h4>
       </div>
       <div class="coin-time">
-        <h4>更新時間{{ Description }}</h4>
+        <h4>更新時間</h4>
       </div>
     </div>
     <div class="home-link">
@@ -36,21 +36,33 @@
 
 <script>
 import axios from "axios"
+
+axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.headers.get['Content-Type'] = 'application/json;charset=utf-8';
+// axios.defaults.headers.get['Access-Control-Allow-Origin'] = 'https://api.coin.z.com"';
+axios.defaults.headers.get['Access-Control-Allow-Credential'] = true;
+
 export default {
-  props:["Value,Description"],
+  props:["Value"],
   data(){
     return{
-      Value:"",
-      Description:"",
+      value:"",
     };
   },
-  async created() {
-    const item = await axios.get(
-      'https://api.coin.z.com/public/v1/ticker?symbol=${this.value}'
-    );
-    const coinData = item.data;
-    this.value = coinData.value;
-    this.description = coinData.description;
+  async mounted() {
+    // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+    // const url = await axios.get(`https://api.coin.z.com/public/v1/ticker?symbol=BTC`)
+    // const coinData = url.symbol;
+    // console.log (url.symbol)
+    // this.value = coinData.value;
+    axios.get(`https://api.coin.z.com/public/v1/ticker?symbol=BTC`)
+    .then(function(response){
+      console.log(response.data.value)
+      this.value = response.data.value
+    }.bind(this))
+    .catch (function (error) {
+      console.log(error)
+    })
   },
 };
 </script>
@@ -102,6 +114,7 @@ body {
 .coin-detail{
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .coin-detail h4{

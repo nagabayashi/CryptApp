@@ -1,14 +1,14 @@
 <template>
   <div class="list">
     <div class="list-title">
-      <h1>{{ Value }}</h1>
+      <h1>{{ Symbol }}</h1>
     </div>
     <div class="list-detail">
       <h1>{{ Description }}</h1>
     </div>
     <div class="list-link">
       <button>
-      <a @click="$router.push({ name: 'About', params: { Value: Value } })">詳細</a>
+      <a @click="$router.push({ name: 'About', params: { Value: Symbol }})">詳細</a>
       </button>
     </div>
   </div>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  props: ["Value","Description"],
+  props: ["Symbol","Description"],
 };
 </script>
 
